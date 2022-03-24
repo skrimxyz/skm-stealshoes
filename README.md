@@ -8,6 +8,7 @@ Add the item in qb-core/shared/items.lua
 
 # Step 2
 Search in your inventory this event "inventory:client:UseWeapon" and add this:
+
 `	elseif weaponName == "weapon_shoe" then
         GiveWeaponToPed(ped, GetHashKey(weaponName), ammo, false, false)
         SetPedAmmo(ped, GetHashKey(weaponName), 2)
