@@ -9,11 +9,13 @@ Add the item in qb-core/shared/items.lua
 # Step 2
 Search in your inventory this event "inventory:client:UseWeapon" and add this:
 
-`	elseif weaponName == "weapon_shoe" then
+```	
+elseif weaponName == "weapon_shoe" then
         GiveWeaponToPed(ped, GetHashKey(weaponName), ammo, false, false)
         SetPedAmmo(ped, GetHashKey(weaponName), 2)
         SetCurrentPedWeapon(ped, GetHashKey(weaponName), true)
         TriggerEvent('qb-hud:client:ToggleWeaponMode', true)  
         TriggerServerEvent('QBCore:Server:RemoveItem', weaponName, 1)
         TriggerEvent('weapons:client:SetCurrentWeapon', weaponData, shootbool)
-        currentWeapon = weaponName`
+        currentWeapon = weaponName
+```
