@@ -7,7 +7,7 @@ Add the item in qb-core/shared/items.lua
 	['weapon_shoe']                = {['name'] = 'weapon_shoe', ['label'] = 'Shoes', 					['weight'] = 900, 		['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'shoes.png', 		['unique'] = true, 		['useable'] = false, 	['description'] = 'I promise those are not stolen!'},
 
 # Step 2
-Search in your inventory this event "inventory:client:UseWeapon" and add this:
+Search in your inventory this event "inventory:client:UseWeapon" and then add this:
 
 ```	
 elseif weaponName == "weapon_shoe" then
@@ -19,3 +19,7 @@ elseif weaponName == "weapon_shoe" then
         TriggerEvent('weapons:client:SetCurrentWeapon', weaponData, shootbool)
         currentWeapon = weaponName
 ```
+
+# Step 3
+Add the image in your inventory script
+![shoes](https://user-images.githubusercontent.com/92062857/159924348-98abdcad-f043-497a-87bf-e152f7a558b2.png)
