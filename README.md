@@ -1,3 +1,3 @@
-# something
+# QBCORE STEAL SHOE SIMPLE SCRIPT
 yes sir
 hellooo
