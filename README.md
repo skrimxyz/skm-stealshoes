@@ -22,4 +22,5 @@ elseif weaponName == "weapon_shoe" then
 
 # Step 3
 Add the image in your inventory script!
-(https://user-images.githubusercontent.com/92062857/159924348-98abdcad-f043-497a-87bf-e152f7a558b2.png)
+
+![shoes](https://user-images.githubusercontent.com/92062857/159924852-646ceeba-45e7-4629-bc87-1521a7ed50ad.png)
