@@ -33,13 +33,11 @@ AddEventHandler('skm-stealshoes:client:stealshoes', function()
       if player ~= -1 and distance < 2.5 and retval ~= nil then
         local playerId = GetPlayerServerId(player)
         QBCore.Functions.GetPlayerData(function(PlayerData)
-            --if PlayerData.job.name == "police" then
                 TriggerServerEvent("skm-stealshoes:server:stealshoes", playerId)
                 TriggerEvent('animations:client:EmoteCommandStart', {"mechanic3"})
                 Wait(1000)
                 TriggerEvent('animations:client:EmoteCommandStart', {"c"})
                 GiveShoe()
-            --end
         end)
     else
     QBCore.Functions.Notify("No one nearby!", "error")
