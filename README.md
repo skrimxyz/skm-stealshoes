@@ -15,4 +15,4 @@ Search in your inventory this event "inventory:client:UseWeapon" and add this:
         TriggerEvent('qb-hud:client:ToggleWeaponMode', true)  
         TriggerServerEvent('QBCore:Server:RemoveItem', weaponName, 1)
         TriggerEvent('weapons:client:SetCurrentWeapon', weaponData, shootbool)
-        currentWeapon = weaponName
+        currentWeapon = weaponName`
