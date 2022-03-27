@@ -29,8 +29,9 @@ end
 RegisterNetEvent('skm-stealshoes:client:stealshoes')
 AddEventHandler('skm-stealshoes:client:stealshoes', function()
     local player, distance = GetClosestPlayer(playerId)
-    local retval = GetPedDrawableVariation(player, 6)
-      if player ~= -1 and distance < 2.5 and retval ~= nil then
+    local retval = GetPedDrawableVariation(playerPed, 6)
+    local playerPed = GetPlayerPed(player)
+      if player ~= -1 and distance < 2.5 and retval ~= nil and IsEntityPlayingAnim(playerPed, "missminuteman_1ig_2", "handsup_base", 3) then
         local playerId = GetPlayerServerId(player)
         QBCore.Functions.GetPlayerData(function(PlayerData)
                 TriggerServerEvent("skm-stealshoes:server:stealshoes", playerId)
@@ -40,23 +41,10 @@ AddEventHandler('skm-stealshoes:client:stealshoes', function()
                 GiveShoe()
         end)
     else
-    QBCore.Functions.Notify("No one nearby!", "error")
     end
 end)
 
 RegisterNetEvent('skm-stealshoes:client:stealshoesc')
 AddEventHandler('skm-stealshoes:client:stealshoesc', function()
-    local ad = "missheist_agency2ahelmet"
-    loadAnimDict(ad)
-    RequestAnimDict(dict)
-    Wait(600)
-    ClearPedSecondaryTask(PlayerPedId())
     SetPedComponentVariation(PlayerPedId(), 6, 34, 0, 0)
 end)
-
-function loadAnimDict(dict)
-    while (not HasAnimDictLoaded(dict)) do
-        RequestAnimDict(dict)
-        Citizen.Wait(5)
-    end
-end
